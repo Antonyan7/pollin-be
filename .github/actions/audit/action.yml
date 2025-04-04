@@ -1,0 +1,32 @@
+name: 'Audit CI'
+description: 'audit action'
+inputs:
+  node_version:
+    description: 'Node version'
+    required: false
+    default: v20.11.1
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install packages
+      env:
+        HUSKY: 0
+      run: |
+        echo "::group::Install NodeJs"
+        export NVM_DIR=~/.nvm
+        source ~/.nvm/nvm.sh
+        nvm install ${{ inputs.node_version }}
+        nvm use ${{ inputs.node_version }}
+        PATH="$HOME/.yarn/bin:$PATH"
+        yarn config set prefix ~/.yarn -g
+
+        echo "::group::Install modules"
+        yarn install
+        echo "::endgroup::"
+
+        echo "::group::Run Audit for all packages"
+        yarn run audit:all
+        echo "::endgroup::"
+
+      shell: bash

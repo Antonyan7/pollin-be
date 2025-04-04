@@ -1,0 +1,22 @@
+export const basicFieldMapping = {
+  appointmentUUID: 'ACUITY_APPOINTMENT_UUID',
+  appointmentRevisionId: 'ACUITY_APPOINTMENT_REVISION_ID',
+  dateOfBirthDay: 'ACUITY_FIELD_DATE_OF_BIRTH_DAY',
+  dateOfBirthMonth: 'ACUITY_FIELD_DATE_OF_BIRTH_MONTH',
+  dateOfBirthYear: 'ACUITY_FIELD_DATE_OF_BIRTH_YEAR',
+
+  sexAtBirth: 'ACUITY_FIELD_SEX_AT_BIRTH',
+  bookAppointmentWithPhysician: 'ACUITY_FIELD_BOOK_APPOINTMENT_WITH_PHYSICIAN',
+
+  primaryReason: 'ACUITY_FIELD_PRIMARY_REASON',
+  primaryReasonOtherDescription: 'ACUITY_FIELD_PRIMARY_REASON_OTHER_DESCRIPTION',
+  addedToReadyWaitList: 'ACUITY_FIELD_ADDED_TO_READY_WAIT_LIST',
+
+  ageGroup: 'ACUITY_FIELD_AGE_GROUP',
+
+  haveReferral: 'ACUITY_FIELD_HAVE_REFERRAL',
+  interestedService: 'ACUITY_FIELD_INTERESTED_SERVICE',
+  interestedServiceOther: 'ACUITY_FIELD_INTERESTED_SERVICE_OTHER',
+  agreeTermsAndConditions: 'ACUITY_FIELD_AGREE_TERMS_AND_CONDITIONS',
+  agreeReceivingCommunications: 'ACUITY_FIELD_AGREE_RECEIVING_COMMUNICATIONS',
+}

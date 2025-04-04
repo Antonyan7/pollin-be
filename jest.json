@@ -1,0 +1,149 @@
+{
+  "rootDir": ".",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "testRegex": ".*\\.(test|spec)\\.ts$",
+  "collectCoverageFrom": ["**/*.(t|j)s"],
+  "coverageProvider": "v8",
+  "transform": {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        "jsc": {
+          "target": "esnext",
+          "parser": {
+            "syntax": "typescript",
+            "decorators": true,
+            "dynamicImport": true
+          },
+          "transform": {"legacyDecorator": true, "decoratorMetadata": true}
+        },
+        "module": {
+          "type": "commonjs",
+          "noInterop": true
+        }
+      }
+    ]
+  },
+  "setupFilesAfterEnv": ["./libs/common/test/test-setup.ts"],
+  "workerIdleMemoryLimit": "3GB",
+  "coverageDirectory": "./coverage",
+  "roots": ["<rootDir>/apps/", "<rootDir>/libs/"],
+  "testTimeout": 15000,
+  "globalSetup": "./libs/common/test/jest-global-setup.ts",
+  "globalTeardown": "./libs/common/test/jest-global-teardown.ts",
+  "moduleNameMapper": {
+    "^@libs/common/test$": "<rootDir>/libs/common/test",
+    "^@libs/common/test/(.*)$": "<rootDir>/libs/common/test/$1",
+    "^@libs/common$": "<rootDir>/libs/common/src",
+    "^@libs/common/(.*)$": "<rootDir>/libs/common/src/$1",
+    "^@libs/services-common/(.*)$": "<rootDir>/libs/services-common/src/$1",
+    "^@libs/data-layer$": "<rootDir>/libs/data-layer/src",
+    "^@libs/data-layer/(.*)$": "<rootDir>/libs/data-layer/src/$1",
+    "^@libs/audit-trail$": "<rootDir>/libs/audit-trail/src",
+    "^@libs/audit-trail/(.*)$": "<rootDir>/libs/audit-trail/src/$1",
+    "^@libs/redis$": "<rootDir>/libs/redis/src",
+    "^@libs/redis/(.*)$": "<rootDir>/libs/redis/src/$1",
+    "^@libs/terminus": "<rootDir>/libs/terminus/src",
+    "^@libs/terminus/(.*)$": "<rootDir>/libs/terminus/src/$1",
+    "^@libs/tests$": "<rootDir>/libs/tests",
+    "^@libs/tests/(.*)$": "<rootDir>/libs/tests/$1",
+    "^@apps/core$": "<rootDir>/apps/core/src",
+    "^@apps/core/(.*)$": "<rootDir>/apps/core/src/$1",
+    "^@apps/booking$": "<rootDir>/apps/booking/src",
+    "^@apps/booking/(.*)$": "<rootDir>/apps/booking/src/$1",
+    "^@apps/emr$": "<rootDir>/apps/emr/src",
+    "^@apps/emr/(.*)$": "<rootDir>/apps/emr/src/$1",
+    "^@apps/lis$": "<rootDir>/apps/lis/src",
+    "^@apps/lis/(.*)$": "<rootDir>/apps/lis/src/$1",
+    "^@apps/core-background$": "<rootDir>/apps/core-background/src",
+    "^@apps/core-background/(.*)$": "<rootDir>/apps/core-background/src/$1",
+    "^@apps/booking-background$": "<rootDir>/apps/booking-background/src",
+    "^@apps/booking-background/(.*)$": "<rootDir>/apps/booking-background/src/$1",
+    "^@apps/emr-background$": "<rootDir>/apps/emr-background/src",
+    "^@apps/emr-background/(.*)$": "<rootDir>/apps/emr-background/src/$1",
+    "^@apps/lis-background$": "<rootDir>/apps/lis-background/src",
+    "^@apps/lis-background/(.*)$": "<rootDir>/apps/lis-background/src/$1",
+    "^@apps/download$": "<rootDir>/apps/download/src",
+    "^@apps/download/(.*)$": "<rootDir>/apps/download/src/$1",
+    "^@config/(.*)$": "<rootDir>/env-config/$1",
+    "^@seeds/firestore$": "<rootDir>/seeds/firestore",
+    "^@seeds/firestore/(.*)$": "<rootDir>/seeds/firestore/$1",
+    "^@seeds/typeorm$": "<rootDir>/seeds/typeorm",
+    "^@seeds/typeorm/(.*)$": "<rootDir>/seeds/typeorm/$1",
+    "^@firebase-platform$": "<rootDir>/firebase-platform",
+    "^@firebase-platform/(.*)$": "<rootDir>/firebase-platform/$1",
+    "^@tools$": "<rootDir>/tools",
+    "^@tools/(.*)$": "<rootDir>/tools/$1",
+    "^@dataSource$": "<rootDir>/data-source.ts",
+    "^@version": "<rootDir>/version.ts"
+  },
+  "coveragePathIgnorePatterns": [
+    "node_modules",
+    "scripts",
+    "dist",
+    "migrations",
+    "seeds",
+    "./*.dto.ts",
+    "./apps/download/src/main.ts",
+    "./apps/core/src/main.ts",
+    "./apps/booking/src/main.ts",
+    "./apps/emr/src/main.ts",
+    "./apps/lis/src/main.ts",
+    "./apps/core-background/src/main.ts",
+    "./apps/booking-background/src/main.ts",
+    "./apps/emr-background/src/main.ts",
+    "./apps/lis-background/src/main.ts",
+
+    ".dto.ts"
+  ],
+  "coverageThreshold": {
+    "./apps/core/src": {
+      "branches": 85,
+      "functions": 85,
+      "lines": 85,
+      "statements": 85
+    },
+    "./apps/booking/src": {
+      "branches": 88,
+      "functions": 89,
+      "lines": 89,
+      "statements": 89
+    },
+    "./apps/emr/src": {
+      "branches": 82,
+      "functions": 89,
+      "lines": 89,
+      "statements": 89
+    },
+    "./apps/lis/src": {
+      "branches": 60,
+      "functions": 60,
+      "lines": 84,
+      "statements": 84
+    },
+    "./apps/download/src": {
+      "branches": 80,
+      "functions": 80,
+      "lines": 80,
+      "statements": 80
+    },
+    "./apps/emr-background/src": {
+      "branches": 73,
+      "functions": 87,
+      "lines": 84,
+      "statements": 84
+    },
+    "./apps/lis-background/src": {
+      "branches": 75,
+      "functions": 44,
+      "lines": 59,
+      "statements": 59
+    },
+    "./apps/booking-background/src": {
+      "branches": 78,
+      "functions": 89,
+      "lines": 86,
+      "statements": 86
+    }
+  }
+}

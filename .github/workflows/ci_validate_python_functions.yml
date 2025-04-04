@@ -1,0 +1,43 @@
+name: Validate ultrasound parser
+
+on:
+  pull_request:
+    paths:
+      - 'python-platform/functions/**'
+      - '.github/workflows/ci_validate_python_functions.yml'
+    branches:
+      - develop
+  workflow_dispatch:
+  schedule:
+    # Once a day at 05:00
+    - cron: '0 5 * * *'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout BE Repo
+        uses: actions/checkout@v4
+
+      - name: Download Python and Cache
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - run: |
+          cd python-platform/functions/parseSrReportReceivedFromTni
+          pip install -r ./requirements.txt
+          pip install -r ./requirements-dev.txt
+          pylint ./*.py
+        shell: bash
+
+      - run: |
+          cd python-platform/functions/uploadGoogleAdConversion
+          pip install -r ./requirements.txt
+          pip install -r ./requirements-dev.txt
+          pylint ./*.py
+        shell: bash

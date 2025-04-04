@@ -1,0 +1,55 @@
+name: SQL Schema Migration
+run-name: "SQL Schema Migration: ${{ inputs.environment || 'dev' }}"
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to Deploy From
+        required: true
+        type: string
+        default: 'develop'
+      environment:
+        description: Environment
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - preprod
+  push:
+    paths:
+      - 'libs/data-layer/**'
+      - 'migrations/**'
+      - '.github/workflows/sql_schema_migration.yml'
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || 'dev' }}
+    timeout-minutes: 20
+    steps:
+      - name: Checkout Services Repo
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-backend
+          ref: ${{ github.event.inputs.branch }}
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+
+      - name: Checkout Actions repo
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-ci-actions
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+          path: custom-actions
+
+      - name: SQL schema sync and migration - On Merge
+        uses: ./custom-actions/.github/actions/sql-schema-migration
+        with:
+          environment: ${{ github.event.inputs.environment }}
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.BE_GCP_SERVICE_ACCOUNT}}
+          PROJECT_ID: ${{ vars.BE_PROJECT_ID}}

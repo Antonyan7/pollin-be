@@ -1,0 +1,5 @@
+export * from './lab-sync-test-results-list.test'
+export * from './lab-sync-test-results-statuses.test'
+export * from './lab-sync-test-results-link.test'
+export * from './lab-sync-test-results-action.test'
+export * from './lab-sync-status.test'

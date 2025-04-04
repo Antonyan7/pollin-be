@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.cdnfonts.com/css/geograph-edit-black" rel="stylesheet" />
+  <title>Nestproject - Chat</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <img src="./green.svg" height="120px" width="120px" />
+    <h2>How can we help?</h2>
+    <p>Chat with your care team to get the support that you need.</p>
+  </div>
+  <script>
+    function getURLParameter(name) {
+      return (
+        decodeURIComponent(
+          (new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(
+            location.search
+          ) || [null, ""])[1].replace(/\+/g, "%20")
+        ) || null
+      );
+    }
+
+    window.chatwootSettings = {
+      position: "right",
+      type: "expanded_bubble",
+      launcherTitle: "Chat now",
+    };
+
+    (function (d, t) {
+      fetch('./config.json')
+        .then(response => response.json())
+        .then(config => {
+          const BASE_URL = config.BASE_URL;
+          const WEBSITE_TOKEN = config.WEBSITE_TOKEN;
+
+          const g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+          g.src = BASE_URL + '/packs/js/sdk.js';
+          g.defer = true;
+          g.async = true;
+          s.parentNode.insertBefore(g, s);
+          g.onload = function () {
+            window.chatwootSDK.run({
+              websiteToken: WEBSITE_TOKEN,
+              baseUrl: BASE_URL,
+              type: 'expanded_bubble',
+              launcherTitle: 'Chat now',
+            });
+          };
+        })
+        .catch(error => {
+          console.error('Error fetching configuration:', error);
+        });
+    })(document, "script");
+
+    window.addEventListener('chatwoot:ready', function () {
+      const id = getURLParameter('id');
+      const email = getURLParameter('email');
+      const name = getURLParameter('name');
+      const hash = getURLParameter('hash');
+      const teamIdentifier = getURLParameter('chat_team_identifier');
+      const pushValidationToken = getURLParameter('push_validation_token')
+      const ivfActive = getURLParameter('is_ivf_active')
+
+      window.$chatwoot.toggle();
+
+      if (id && name) {
+        window.$chatwoot.setUser(id, {
+          email: email,
+          name: name,
+          identifier_hash: hash,
+        });
+      }
+
+      window.$chatwoot.setCustomAttributes({
+        chat_team_identifier: teamIdentifier,
+        webhook_payload_validation_token: pushValidationToken,
+        is_ivf_active: ivfActive
+      });
+    });
+  </script>
+</body>
+
+</html>

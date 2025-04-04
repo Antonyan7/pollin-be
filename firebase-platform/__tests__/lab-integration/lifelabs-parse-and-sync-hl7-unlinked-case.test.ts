@@ -1,0 +1,163 @@
+import {getCreateDatabaseConnection} from '@libs/common/typeorm/connection'
+import {
+  LabInfoSeed,
+  LabSyncRawDataSeed,
+  PatientSeed,
+  ServiceProviderSeed,
+  TestResultMeasurementSeed,
+  TestResultSeed,
+  TestTypeSeed,
+  LabSyncObservationRequestSeed,
+  ServiceTypeSeed,
+  TestOrderSeed,
+  SpecimenSeed,
+  TestPanelSeed,
+  SuperTypeSeed,
+} from '@seeds/typeorm'
+import {DataSource} from 'typeorm'
+import {FirebaseStorageAdapter} from '@libs/common/adapters'
+import {handlerParseAndSyncLabHL7} from '@codebase/test-orders-and-results/hl7-parsing-and-sync/handler'
+import {labInfoLifeLabsFixture} from '../fixtures/lab-integration/lab-info.fixture'
+import {labSyncRawDataFromLifeLabsPendingFixture} from '../fixtures/lab-integration/lab-sync-raw-data.fixture'
+import * as fs from 'fs/promises'
+import {patientForLabIntegrationFixture} from '../fixtures/lab-integration/patient.fixture'
+import {
+  serviceProviderForTestResultForLabIntegration,
+  testResultForLifeLabsStatusNotUpdatedFixture,
+} from '../fixtures/lab-integration/test-result.fixture'
+import {testResultMeasurementOneForLinkedAndStatusForLabIntegrationFixture} from '../fixtures/lab-integration/test-result-measurement.fixture'
+import {
+  testTypeForLabIntegrationFixture,
+  testTypeOneForLabIntegrationFixture,
+} from '../fixtures/lab-integration/test-type.fixture'
+import {LabSyncTestResultStatus} from '@libs/data-layer/apps/clinic-test/enums'
+import {
+  serviceTypeForLabIntegrationFixture,
+  specimenExternalForLabIntegrationFixture,
+  testOrderForLabIntegrationFixture,
+} from '../fixtures/lab-integration/specimen-related-fixtures'
+import {testPanelForPartialLipidAssessment} from '../fixtures/lab-integration/test-panel.fixture'
+import {superTypeOtherFixture} from '@libs/common/test/fixtures/super-type.fixture'
+
+jest.mock('../../../libs/common/src/adapters/dynacare.adapter')
+jest.mock('../../../libs/common/src/adapters/firebase/firebase-storage-adapter.ts')
+jest.mock('@google-cloud/logging-bunyan')
+jest.mock('bunyan', () => {
+  return {
+    createLogger: jest.fn().mockReturnValue({
+      info: jest.fn(),
+      warn: jest.fn(),
+      error: jest.fn(),
+    }),
+  }
+})
+jest.setTimeout(15000)
+
+describe('LifeLabs Integration: parse and sync lab xml file: Test', () => {
+  let dataSource: DataSource
+
+  let patientSeed: PatientSeed
+  let serviceProviderSeed: ServiceProviderSeed
+  let testTypeSeed: TestTypeSeed
+  let testPanelSeed: TestPanelSeed
+  let superTypeSeed: SuperTypeSeed
+  let serviceTypeSeed: ServiceTypeSeed
+  let testOrderSeed: TestOrderSeed
+  let specimenSeed: SpecimenSeed
+  let testResultSeed: TestResultSeed
+  let testResultMeasurementSeed: TestResultMeasurementSeed
+  let labInfoSeed: LabInfoSeed
+  let labSyncRawDataSeed: LabSyncRawDataSeed
+  let labSyncObservationRequestSeed: LabSyncObservationRequestSeed
+
+  beforeAll(async () => {
+    dataSource = await getCreateDatabaseConnection()
+
+    patientSeed = new PatientSeed(dataSource)
+    serviceProviderSeed = new ServiceProviderSeed(dataSource)
+    testTypeSeed = new TestTypeSeed(dataSource)
+    testPanelSeed = new TestPanelSeed(dataSource)
+    superTypeSeed = new SuperTypeSeed(dataSource)
+    serviceTypeSeed = new ServiceTypeSeed(dataSource)
+    testOrderSeed = new TestOrderSeed(dataSource)
+    specimenSeed = new SpecimenSeed(dataSource)
+    testResultSeed = new TestResultSeed(dataSource)
+    testResultMeasurementSeed = new TestResultMeasurementSeed(dataSource)
+    labInfoSeed = new LabInfoSeed(dataSource)
+    labSyncRawDataSeed = new LabSyncRawDataSeed(dataSource)
+    labSyncObservationRequestSeed = new LabSyncObservationRequestSeed(dataSource)
+
+    await patientSeed.create(patientForLabIntegrationFixture)
+    await serviceProviderSeed.create(serviceProviderForTestResultForLabIntegration)
+    await labInfoSeed.create(labInfoLifeLabsFixture)
+
+    await testPanelSeed.create(testPanelForPartialLipidAssessment)
+    await testTypeSeed.create(testTypeOneForLabIntegrationFixture)
+    await testTypeSeed.create(testTypeForLabIntegrationFixture)
+
+    await superTypeSeed.create(superTypeOtherFixture)
+    await serviceTypeSeed.create(serviceTypeForLabIntegrationFixture)
+    await testOrderSeed.create(testOrderForLabIntegrationFixture)
+    await specimenSeed.create(specimenExternalForLabIntegrationFixture)
+
+    await testResultSeed.create(testResultForLifeLabsStatusNotUpdatedFixture)
+
+    await testResultMeasurementSeed.create(
+      testResultMeasurementOneForLinkedAndStatusForLabIntegrationFixture,
+    )
+
+    await labSyncRawDataSeed.create(labSyncRawDataFromLifeLabsPendingFixture)
+  })
+
+  test('should parse & sync raw data: Observation Request - Unlinked, Test Result - NotReceived', async () => {
+    const file = await fs.readFile(__dirname + '/lifelabs/lifelabs-one-obr-and-one-obx.xml')
+
+    const fileString = Buffer.from(file).toString()
+
+    const spyFirebaseStorageAdapter = jest.spyOn(
+      FirebaseStorageAdapter.prototype,
+      'downloadFileByName',
+    )
+    spyFirebaseStorageAdapter.mockResolvedValue(fileString)
+
+    await handlerParseAndSyncLabHL7()
+
+    const testResult = await testResultSeed.findOneByUuid(
+      testResultForLifeLabsStatusNotUpdatedFixture.uuid,
+    )
+
+    expect(testResult.status).toBe(testResultForLifeLabsStatusNotUpdatedFixture.status)
+
+    const labSyncObservationRequest = await labSyncObservationRequestSeed.findByLabSyncRawDataId(
+      labSyncRawDataFromLifeLabsPendingFixture.id,
+    )
+
+    expect(labSyncObservationRequest.status).toBe(LabSyncTestResultStatus.Unlinked)
+
+    spyFirebaseStorageAdapter.mockRestore()
+  })
+
+  afterAll(async () => {
+    jest.clearAllMocks()
+
+    await labSyncRawDataSeed.removeByIds([labSyncRawDataFromLifeLabsPendingFixture.id])
+
+    await testResultMeasurementSeed.removeByIds([
+      testResultMeasurementOneForLinkedAndStatusForLabIntegrationFixture.id,
+    ])
+    await testResultSeed.removeByIds([testResultForLifeLabsStatusNotUpdatedFixture.id])
+
+    await specimenSeed.removeByIds([specimenExternalForLabIntegrationFixture.id])
+    await testOrderSeed.removeByIds([testOrderForLabIntegrationFixture.id])
+    await serviceTypeSeed.removeByIds([serviceTypeForLabIntegrationFixture.id])
+    await superTypeSeed.removeByIds([superTypeOtherFixture.id])
+    await testTypeSeed.removeByIds([
+      testTypeForLabIntegrationFixture.id,
+      testTypeOneForLabIntegrationFixture.id,
+    ])
+    await testPanelSeed.removeByIds([testPanelForPartialLipidAssessment.id])
+    await labInfoSeed.removeByIds([labInfoLifeLabsFixture.id])
+    await serviceProviderSeed.removeByIds([serviceProviderForTestResultForLabIntegration.id])
+    await patientSeed.removeByIds([patientForLabIntegrationFixture.id])
+  })
+})

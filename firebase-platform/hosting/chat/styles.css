@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3eee7;
+}
+
+#root {
+  text-align: center;
+  padding: 40px;
+  max-width: 400px;
+}
+
+img {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-family: 'Geomanist', sans-serif;
+  color: #48494a;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, sans-serif;
+  color: #48494a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: center;
+}

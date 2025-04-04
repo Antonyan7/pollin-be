@@ -1,0 +1,71 @@
+{
+  "projects": {
+    "default": "Nestproject-backend-dev"
+  },
+  "targets": {
+    "Nestproject-backend-dev": {
+      "hosting": {
+        "links": [
+          "Nestproject-backend-dev"
+        ],
+        "webhooks": [
+          "webhooks-Nestproject-backend-dev"
+        ],
+        "adconversions": [
+          "adconversions-Nestproject-backend-dev"
+        ],
+        "chat": [
+          "chat-Nestproject-backend-dev"
+        ]
+      }
+    },
+    "Nestproject-backend-qa": {
+      "hosting": {
+        "links": [
+          "Nestproject-backend-qa"
+        ],
+        "webhooks": [
+          "webhooks-Nestproject-backend-qa"
+        ],
+        "adconversions": [
+          "adconversions-Nestproject-backend-qa"
+        ],
+        "chat": [
+          "chat-Nestproject-backend-qa"
+        ]
+      }
+    },
+    "Nestproject-backend-preprod": {
+      "hosting": {
+        "links": [
+          "Nestproject-backend-preprod"
+        ],
+        "webhooks": [
+          "webhooks-Nestproject-backend-preprod"
+        ],
+        "adconversions": [
+          "adconversions-Nestproject-backend-preprod"
+        ],
+        "chat": [
+          "chat-Nestproject-backend-preprod"
+        ]
+      }
+    },
+    "Nestproject-backend-ca-prod": {
+      "hosting": {
+        "links": [
+          "Nestproject-backend-ca-prod"
+        ],
+        "webhooks": [
+          "webhooks-Nestproject-backend-ca-prod"
+        ],
+        "adconversions": [
+          "adconversions-Nestproject-backend-ca-prod"
+        ],
+        "chat": [
+          "chat-Nestproject-backend-ca-prod"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "rootDir": ".",
+  "moduleDirectories": ["node_modules"],
+  "globalSetup": "./jest-global-setup.ts",
+  "testMatch": ["<rootDir>/**/*.test.ts", "!**/node_modules/**"],
+  "transform": {
+    "^.+\\.(t|j)s$": [
+      "@swc/jest",
+      {
+        "jsc": {
+          "target": "esnext",
+          "parser": {
+            "syntax": "typescript",
+            "decorators": true,
+            "dynamicImport": true
+          },
+          "transform": {
+            "legacyDecorator": true,
+            "decoratorMetadata": true
+          }
+        },
+        "module": {
+          "type": "commonjs",
+          "noInterop": true
+        }
+      }
+    ]
+  },
+  "workerIdleMemoryLimit": "3GB",
+  "coveragePathIgnorePatterns": [
+    "email-send/index.ts",
+    "dicom-payloads.dto.ts",
+    "update-bucket-permission-by-role.ts",
+    "update-bucket-permission-by-user.ts",
+    "functions/checkout/src/generate-payment-receipt-pdf"
+  ],
+  "testEnvironment": "node",
+  "moduleNameMapper": {
+    "^stripe$": "<rootDir>/../libs/common/src/adapters/__mocks__/stripe.ts",
+    "^@libs/common/test$": "<rootDir>/../libs/common/test",
+    "^@libs/common/test/(.*)$": "<rootDir>/../libs/common/test/$1",
+    "^@libs/common$": "<rootDir>/../libs/common/src",
+    "^@libs/common/(.*)$": "<rootDir>/../libs/common/src/$1",
+    "^@libs/data-layer$": "<rootDir>/../libs/data-layer/src",
+    "^@libs/data-layer/(.*)$": "<rootDir>/../libs/data-layer/src/$1",
+    "^@libs/redis$": "<rootDir>/../libs/redis/src",
+    "^@libs/redis/(.*)$": "<rootDir>/../libs/redis/src/$1",
+    "^@libs/services-common/(.*)$": "<rootDir>/../libs/services-common/src/$1",
+    "^@libs/audit-trail$": "<rootDir>/../libs/audit-trail/src",
+    "^@libs/audit-trail/(.*)$": "<rootDir>/../libs/audit-trail/src/$1",
+    "^@config$": "<rootDir>/../env-config",
+    "^@config/(.*)$": "<rootDir>/../env-config/$1",
+    "^@apps/core$": "<rootDir>/../apps/core/src",
+    "^@apps/core/(.*)$": "<rootDir>/../apps/core/src/$1",
+    "@apps/emr": ["../../apps/emr/src"],
+    "@apps/emr/*": ["../../apps/emr/src/*"],
+    "@apps/lis$": ["<rootDir>/../apps/lis/src"],
+    "@apps/lis/(.*)$": ["<rootDir>/../apps/lis/src/$1"],
+    "^@apps/booking$": "<rootDir>/apps/../booking/src",
+    "^@apps/booking/(.*)$": "<rootDir>/apps/../booking/src/$1",
+    "^@seeds/firestore$": "<rootDir>/../seeds/firestore",
+    "^@seeds/firestore/(.*)$": "<rootDir>/../seeds/firestore/$1",
+    "^@seeds/typeorm": "<rootDir>/../seeds/typeorm",
+    "^@seeds/typeorm/(.*)$": "<rootDir>/../seeds/typeorm/$1",
+    "^@firebase-platform$": "<rootDir>/../firebase-platform",
+    "^@firebase-platform/(.*)$": "<rootDir>/../firebase-platform/$1",
+    "^@codebase/appointments$": "<rootDir>/../firebase-platform/functions/appointments/src",
+    "^@codebase/appointments/(.*)$": "<rootDir>/../firebase-platform/functions/appointments/src/$1",
+    "^@codebase/cache$": "<rootDir>/../firebase-platform/functions/cache/src",
+    "^@codebase/cache/(.*)$": "<rootDir>/../firebase-platform/functions/cache/src/$1",
+    "^@codebase/ivf-lab$": "<rootDir>/../firebase-platform/functions/ivf-lab/src",
+    "^@codebase/ivf-lab/(.*)$": "<rootDir>/../firebase-platform/functions/ivf-lab/src/$1",
+    "^@codebase/test-orders-and-results$": "<rootDir>/../firebase-platform/functions/test-orders-and-results/src",
+    "^@codebase/test-orders-and-results/(.*)$": "<rootDir>/../firebase-platform/functions/test-orders-and-results/src/$1",
+    "^@codebase/tasks$": "<rootDir>/../firebase-platform/functions/tasks/src",
+    "^@codebase/tasks/(.*)$": "<rootDir>/../firebase-platform/functions/tasks/src/$1",
+    "^@codebase/checkout$": "<rootDir>/../firebase-platform/functions/checkout/src",
+    "^@codebase/checkout/(.*)$": "<rootDir>/../firebase-platform/functions/checkout/src/$1",
+    "^@codebase/email-notification$": "<rootDir>/../firebase-platform/functions/email-notification/src",
+    "^@codebase/email-notification/(.*)$": "<rootDir>/../firebase-platform/functions/email-notification/src/$1",
+    "^@codebase/patients/(.*)$": "<rootDir>/../firebase-platform/functions/patients/src/$1",
+    "^@dataSource$": "<rootDir>/../data-source.ts",
+    "^@version": "<rootDir>/../version.ts",
+    "^@functions-types": "<rootDir>/../firebase-platform/functions/@types"
+  },
+  "coverageThreshold": {
+    "./functions": {
+      "branches": 60,
+      "functions": 60,
+      "lines": 60,
+      "statements": 60
+    }
+  }
+}

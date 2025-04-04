@@ -1,0 +1,22 @@
+name: Danger
+run-name: 'Danger Validations'
+on:
+  pull_request:
+    types: [assigned, opened, edited, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  danger:
+    runs-on: be-ci-pool
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - name: Checkout BE Repo
+        uses: actions/checkout@v4
+
+      - uses: danger/danger-js@11.2.0
+        name: Danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

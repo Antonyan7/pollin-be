@@ -1,0 +1,47 @@
+version: '3.9'
+services:
+  mysql:
+    container_name: Nestproject-mysql
+    image: mysql:8.3
+    restart: always
+    command: --authentication_policy=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root-pass
+      - MYSQL_DATABASE=${DB_SQL_NAME:-db}
+      - MYSQL_USER=${DB_SQL_USERNAME:-user}
+      - MYSQL_PASSWORD=${DB_SQL_PASSWORD:-pass}
+    ports:
+      - '3306:3306'
+    healthcheck:
+      test: '/etc/init.d/mysql status'
+      interval: 3s
+      timeout: 3s
+      retries: 50
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - 6379:6379
+    command: [ 'redis-server', '--appendonly', 'yes' ]
+    volumes:
+      - redis-data:/redis-data
+  firebase:
+    build:
+      context: .
+      dockerfile: ./firebase-platform/Dockerfile
+    volumes:
+      - ./firebase-platform:/opt/firebase
+    ports:
+      - 4000:4000 # UI
+      - 9099:9099 # Firebase Authentication
+      - 9095:9095 # Clound Functions
+      - 9098:9098 # Cloud Firestore
+      - 9097:9097 # Cloud Pub/Sub
+      - 9096:9096 # Cloud Storage
+    working_dir: /opt/firebase
+    command: firebase emulators:start
+    tty: true
+volumes:
+  db_data:
+  redis-data:

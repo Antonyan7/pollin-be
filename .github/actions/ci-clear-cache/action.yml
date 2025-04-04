@@ -1,0 +1,47 @@
+name: 'CI clear VM cache'
+inputs:
+  node_version:
+    description: 'Node version'
+    required: false
+    default: v20.11.1
+
+description: 'Clears VMs caches'
+runs:
+  using: 'composite'
+  steps:
+    - name: Cleanup yarn, npm, cypress
+      env:
+        HUSKY: 0
+      run: |
+        echo "::group::Activate NVM and install NodeJS version"
+        source ~/.nvm/nvm.sh
+        nvm install ${{ inputs.node_version }}
+        nvm use ${{ inputs.node_version }}
+        PATH="$HOME/.yarn/bin:$PATH"
+        echo "::endgroup::"
+
+        echo "::group::Clear yarn"
+        yarn cache clean
+        echo "::endgroup::"
+
+        echo "::group::Clear npm"
+        npm cache verify
+        echo "::endgroup::"
+
+        echo "::group::Install modules"
+        yarn install
+        echo "::endgroup::"
+
+        echo "::group::Clear jest cache"
+        yarn run test:clear-cache
+        echo "::endgroup::"
+
+        echo "::group::Clear cypress if installed"
+        if ! [ -x "$(command -v cypress)" ]; then
+          echo 'Error: Cypress is not installed.'
+        else
+          cypress cache clear
+        fi
+        echo "::endgroup::"
+
+      shell: bash

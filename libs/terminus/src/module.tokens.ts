@@ -1,0 +1,1 @@
+export const TERMINUS_CONFIG_TOKEN = Symbol('TERMINUS_CONFIG_TOKEN')

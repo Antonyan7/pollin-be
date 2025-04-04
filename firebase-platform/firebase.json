@@ -1,0 +1,158 @@
+{
+  "emulators": {
+    "auth": {
+      "port": 9099,
+      "host": "0.0.0.0"
+    },
+    "firestore": {
+      "port": 9098,
+      "host": "0.0.0.0"
+    },
+    "pubsub": {
+      "port": 9097,
+      "host": "0.0.0.0"
+    },
+    "storage": {
+      "port": 9096,
+      "host": "0.0.0.0"
+    },
+    "functions": {
+      "port": 9095,
+      "host": "0.0.0.0"
+    },
+    "ui": {
+      "enabled": true,
+      "host": "0.0.0.0"
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "database": {
+    "rules": "realtime-database-rules.json"
+  },
+  "functions": [
+    {
+      "source": "functions/email-notification",
+      "codebase": "email-notification"
+    },
+    {
+      "source": "functions/audit-trail",
+      "codebase": "audit-trail"
+    },
+    {
+      "source": "functions/cache",
+      "codebase": "cache"
+    },
+    {
+      "source": "functions/patients",
+      "codebase": "patients"
+    },
+    {
+      "source": "functions/appointments",
+      "codebase": "appointments"
+    },
+    {
+      "source": "functions/ivf-lab",
+      "codebase": "ivf-lab"
+    },
+    {
+      "source": "functions/questionnaire-to-profile-info",
+      "codebase": "questionnaire-to-profile-info"
+    },
+    {
+      "source": "functions/test-orders-and-results",
+      "codebase": "test-orders-and-results"
+    },
+    {
+      "source": "functions/service-group-availability",
+      "codebase": "service-group-availability"
+    },
+    {
+      "source": "functions/push-notification",
+      "codebase": "push-notification"
+    },
+    {
+      "source": "functions/questionnaire-question",
+      "codebase": "questionnaire-question"
+    },
+    {
+      "source": "functions/tasks",
+      "codebase": "tasks"
+    },
+    {
+      "source": "functions/staff",
+      "codebase": "staff"
+    },
+    {
+      "source": "functions/ohip-billing",
+      "codebase": "ohip-billing"
+    },
+    {
+      "source": "functions/webhooks",
+      "codebase": "webhooks"
+    },
+    {
+      "source": "functions/adconversions",
+      "codebase": "adconversions"
+    },
+    {
+      "source": "functions/acuity",
+      "codebase": "acuity"
+    },
+    {
+      "source": "functions/checkout",
+      "codebase": "checkout"
+    },
+    {
+      "source": "functions/gcp-infra",
+      "codebase": "gcp-infra"
+    },
+    {
+      "source": "functions/plans",
+      "codebase": "plans"
+    },
+    {
+      "source": "functions/ai-integrations",
+      "codebase": "ai-integrations"
+    }
+  ],
+  "hosting": [
+    {
+      "target": "links",
+      "public": "hosting/links",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "webhooks",
+      "public": "hosting/webhooks",
+      "rewrites": [
+        {
+          "source": "/acuity_to_clinic_portal_sync",
+          "function": "acuityToClinicPortalSync",
+          "region": "northamerica-northeast1"
+        }
+      ]
+    },
+    {
+      "target": "adconversions",
+      "public": "hosting/adconversions",
+      "rewrites": [
+        {
+          "source": "/adconversions",
+          "function": "adConversions",
+          "region": "northamerica-northeast1"
+        }
+      ]
+    },
+    {
+      "target": "chat",
+      "public": "hosting/chat",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
+}

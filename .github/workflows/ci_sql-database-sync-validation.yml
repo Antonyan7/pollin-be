@@ -1,0 +1,62 @@
+name: SQL Database sync validation
+on:
+  pull_request:
+    paths:
+      - '**.entity.ts'
+      - 'migrations/**'
+    branches:
+      - develop
+      - 'release/*'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    timeout-minutes: 30
+    runs-on: gcp-host
+    steps:
+      - name: Checkout BE Repo
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-backend
+          ref: ${{ github.ref }}
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+
+      - name: Get current week of the year
+        id: get-week
+        run: echo "WEEK=$(date +'%Y-%V')" >> $GITHUB_ENV
+
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        with:
+          # Cache key includes all paths and the current week to refresh cache weekly
+          path: |
+            ./node_modules
+            migrations/node_modules
+          key: cache-${{ runner.os }}-${{ env.WEEK }}-${{ hashFiles('yarn.lock', 'migrations/yarn.lock') }}
+          restore-keys: |
+            cache-${{ runner.os }}-
+  
+      - name: Checkout Data Seeds repo
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-data-seeds
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+          path: data-seeds
+
+      - name: Run SQL database sync validation
+        if: success()
+        uses: ./.github/actions/sql-database-sync-validation
+        env:
+          seeds_project_id: ${{ vars.SEED_PROJECT_ID }}
+          backend_builds_bucket_id: ${{ vars.BACKEND_BUILD_BUCKET_ID }}
+          integ_test_service_account: ${{ secrets.BACKEND_CODE_AND_SECRETS_FROM_GCP_INTEGRATION_TEST }}

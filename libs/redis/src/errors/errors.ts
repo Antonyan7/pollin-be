@@ -1,0 +1,3 @@
+export const REDIS_GET_ERROR = 'REDIS_GET_ERROR'
+export const REDIS_SET_ERROR = 'REDIS_SET_ERROR'
+export const REDIS_DEL_ERROR = 'REDIS_DEL_ERROR'

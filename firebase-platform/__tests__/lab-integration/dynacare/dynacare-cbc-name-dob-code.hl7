@@ -1,0 +1,13 @@
+MSH|^~\&|LAB|Dynacare|||20230906014419-0400||ORU^R01|20274302|D|2.3|||||||enCA
+PID|1||^^^^JHN^~^^^^XXOEI^||Dick^Moby^Middlename||19790403|F|||9 Toronto Street^Unit 29^Toronto^ON^ABCDEFG^||^|||||
+ORC||^Dynacare|5010019816||CM||||20230825102610-0400||||||||^TEST^DYNA
+OBR|1|^Dynacare|5010019816|544D^ANTINUCLEAR AB. (ANA)^DYNA|||20230825102600-0400|||||||20230825102610-0400|^^^^|989898^TEST^DRTEST^^^^^^DYNA||||AUTO|400090|20230831143406-0400|||F|^^||
+OBX|1|TX|544D^ANTINUCLEAR AB. (ANA)^DYNA|400090|NEGATIVE||NEGATIVE|N|||F|||20230831143406-0400
+NTE|1|RS||RS^^DYNA^IM17
+NTE|2|RS|A negative test is strong evidence against a diagnosis of|RS^^DYNA^IM17
+NTE|3|RS|rheumatic disease but is not conclusive. Results should be|RS^^DYNA^IM17
+NTE|4|RS|interpreted in conjunction with other serological tests and|RS^^DYNA^IM17
+NTE|5|RS|clinical findings.|RS^^DYNA^IM17
+NTE|6|RS||RS^^DYNA^IM17
+NTE|7|RS||RS^^DYNA^IM17
+NTE|8|RF|NEGATIVE|RF^^^

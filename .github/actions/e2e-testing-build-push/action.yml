@@ -1,0 +1,72 @@
+name: 'Run services build and push to Cloud Storage'
+description: 'Create services build for E2E and functional testing'
+inputs:
+  node_version:
+    description: 'Node version'
+    required: false
+    default: v20.11.1
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Create a build
+      env:
+        HUSKY: 0
+      run: |
+        echo "::group::Install and Activate NodeJS"
+        source ~/.nvm/nvm.sh
+        nvm install ${{ inputs.node_version }}
+        nvm use ${{ inputs.node_version }}
+        PATH="$HOME/.yarn/bin:$PATH"
+        echo "::endgroup::"
+
+        echo "::group::Auth with GCLOUD For upload"
+        cat >> service-account.json << EOF
+        ${{ env['service_account'] }}
+        EOF
+        gcloud auth activate-service-account --key-file=./service-account.json
+        rm ./service-account.json
+        echo "::endgroup::"
+
+        echo "::group::Install dependencies"
+        yarn install
+        echo "::endgroup::"
+
+        echo "::group::Build services"
+        yarn run build:all && cp ./package.json ./dist && cp ./yarn.lock ./dist &&  cp -R ./Nestproject-eslint-plugin ./dist/Nestproject-eslint-plugin
+        echo "::endgroup::"
+
+        # echo "::group::Install & Build Functions"
+        # cd ./firebase-platform
+        # bash prepare-e2e-build.sh
+        # cd ..
+        # echo "::endgroup::"
+
+        echo "::group::Remove todays and latest folders"
+        # Turn off errexit for this part since gsutil returns error code if the file doesn't exist
+        set +e
+        # Check today's folder
+        FILE_EXIST=$(gsutil ls gs://${{ env.backend_builds_bucket_id }}/$(date +'%Y-%m-%d') | wc -l)
+        if [ ${FILE_EXIST} -eq 0 ]; then
+          echo "Today's dist folder doesn't exist"
+        else
+          echo "Today's dist folder exist. Removing:"
+          gsutil rm -r gs://${{ env.backend_builds_bucket_id }}/$(date +'%Y-%m-%d')
+        fi
+
+        # Check latest folder
+        FILE_EXIST=$(gsutil ls gs://${{ env.backend_builds_bucket_id }}/latest | wc -l)
+        if [ ${FILE_EXIST} -eq 0 ]; then
+          echo "Latest dist folder doesn't exist"
+        else
+          echo "Latest dist folder exist. Removing:"
+          gsutil rm -r gs://${{ env.backend_builds_bucket_id }}/latest
+        fi
+        set -e
+        echo "::endgroup::"
+
+        echo "::group::Push build to todays and latest folders"
+        gsutil cp -R ./dist gs://${{ env.backend_builds_bucket_id }}/$(date +'%Y-%m-%d')
+        gsutil cp -R ./dist gs://${{ env.backend_builds_bucket_id }}/latest
+        echo "::endgroup::"
+      shell: bash

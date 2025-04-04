@@ -1,0 +1,1 @@
+export const DEFAULT_REDIS_INST = Symbol('DEFAULT_REDIS_INST')

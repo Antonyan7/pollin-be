@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<HL7Messages MessageFormat="ORUR01" MessageCount="15" Version="2.3.1">
+<Message MsgID='5'>
+        <![CDATA[MSH|^~\&|PATHL7|EXC-RV^LIFELABS ONTARIO|HTTPCLIENT||20231225101821-0500||ORU^R01|ON220231225101821633|D|2.3.1|||AL
+PID|||5555555556^^^^JHN^^^^ON&Ontario&HL70347||REDROSE^MARY^^^^^L||19871230|F|||||(416) 675-4530^H
+PV1|1|OU
+ORC|RE||2017-POL230066
+OBR|1|2017-POL230066-0_TR10477-8|2017-POL230066-0_TR10477-8|TR10477-8^Complete Blood Count|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717130637||HAEM1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|6690-2^WBC||8.0|x E9/L|4.0 - 11.0||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|1|RF|Comment1
+NTE|2|RF|Comment2
+NTE|3|RF|Comment3
+OBX|2|NM|789-8^RBC||5.00|x E12/L|4.00 - 5.10||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|NM|718-7^Hemoglobin||150|g/L|120 - 160||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|NM|4544-3^Hematocrit||0.42|L/L|0.350 - 0.450||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|NM|787-2^MCV||90|fL|80 - 100||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|6|NM|785-6^MCH||30|pg|27.5 - 33.0||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|7|NM|786-4^MCHC||330|g/L|305 - 360||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|8|NM|777-3^Platelets||250|x E9/L|150 - 400||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|9|NM|788-0^RDW||12.5|%|11.5 - 14.5||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|10|NM|751-8^Neutrophils||4.0|x E9/L|2.0 - 7.5||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|11|NM|731-0^Lymphocytes||3.0|x E9/L|1.0 - 3.5||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|12|NM|742-7^Monocytes||0.6|x E9/L|0.2 - 1.0||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|13|NM|711-2^Eosinophils||0.3|x E9/L|0.0 - 0.5||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|14|NM|704-7^Basophils||0.1|x E9/L|0.0 - 0.2||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|15|ST|11156-7^WBC  Morphology||NORMAL||||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|16|ST|6742-1^RBC Morphology||NORMAL||||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|17|ST|11125-2^Platelet Morphology||NORMAL||||||F|||20170717130637-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|2|2017-POL230066-0_TR10512-2|2017-POL230066-0_TR10512-2|TR10512-2^Reticulocyte Count|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718140304||HAEM1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|14196-0^Reticulocytes||25|x E9/L|20 - 100||||F|||20170718140304-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|3|2017-POL230066-0_TR10503-1|2017-POL230066-0_TR10503-1|TR10503-1^Hemoglobin Investigation|||20170717090000|||||||20170717090100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170719130640||HAEM2|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|4552-6^Hemoglobin A2||0.033||0.023 - 0.034||||F|||20170718162253-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+OBX|2|ST|4563-3^Hemoglobin C/Total Hemoglobin||NOT DETECTED||||||F|||20170718162253-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+OBX|3|ST|4575-7^Hemoglobin E/Total Hemoglobin||NOT DETECTED||||||F|||20170718162253-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+OBX|4|NM|32682-7^Hemoglobin F/Total Hemoglobin||<0.010||0.000 - 0.020||||F|||20170718162253-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+OBX|5|ST|4625-0^Hemoglobin S/Total Hemoglobin||NOT DETECTED||||||F|||20170718162253-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+OBX|6|ST|XON10301-0^Abnormal Hemoglobin||NOT DETECTED||||||F|||20170719130640-0400|5407^KENNEDY&6560 Kennedy Road&&Mississauga&Ontario&L5T 2X4&Canada&B
+ORC|RE||2017-POL230066
+OBR|4|2017-POL230066-0_TR11564-2|2017-POL230066-0_TR11564-2|TR11564-2^Blood Grouping (Prenatal)|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717143327||HAEM6|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|ST|883-9^ABO Group||A||||||F|||20170717143327-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|ST|10331-7^Rh||NEGATIVE||||||F|||20170717143327-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||If pregnant, this patient is a possible candidate\.br\for Rh immunoglobulin.
+OBX|3|ST|15343-7^Blood Group Antibody Screen||NOTE||||||F|||20170717143327-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Red cell antibody detected by screening at\.br\37 degrees C.\.br\These results are intended for prenatal\.br\care/community monitoring and should not be\.br\used for transfusion purposes.
+OBX|4|FT|XON10318-4^Comment||If prenatal assessment, a copy of this report\.br\should be forwarded to the transfusion service at\.br\the hospital where this patient will be\.br\delivering.||||||F|||20170717143327-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|5|2017-POL230066-0_TR10228-5|2017-POL230066-0_TR10228-5|TR10228-5^Hemoglobin A1c|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718154254||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|4548-4^Hemoglobin A1C/Total Hemoglobin||5.4|%|<6.0||||F|||20170718154254-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||CDA 2013 Guidelines:\.br\-------------------------------------------------\.br\Screening and Diagnosis:\.br\<5.5 %          Normal\.br\5.5% - 5.9 %    At risk\.br\6.0% - 6.4 %    Prediabetes\.br\>OR= 6.5 %      Diabetes Mellitus\.br\ \.br\If HbA1c >OR= 6.5 % and asymptomatic, confirm\.br\using Fasting Glucose, HbA1c or 75g OGTT.\.br\-------------------------------------------------\.br\Monitoring:            <OR= 7.0 %\.br\Target in adults without comorbidities. Other\.br\targets may be more appropriate in children,\.br\elderly and patients with comorbidities.\.br\-------------------------------------------------\.br\Results may not accurately reflect mean blood\.br\glucose in patients with hemoglobin variants,\.br\disorders associated with abnormal erythrocyte\.br\turnover, severe renal and liver disorders.
+ORC|RE||2017-POL230066
+OBR|6|2017-POL230066-0_TR10086-7|2017-POL230066-0_TR10086-7|TR10086-7^Calcium Ionized|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170719152431||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|1995-0^Calcium Ionized||1.50|mmol/L|1.12 - 1.31|H|||F|||20170719152431-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|NM|2753-2^pH||7.40||||||F|||20170719152431-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|NM|19072-8^Calcium Ionized Adjusted To pH 7.4||1.50|mmol/L|1.12 - 1.31|H|||F|||20170719152431-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||\.br\NOTE: Differences between the uncorrected ionized\.br\calcium result and the ionized calcium corrected\.br\to pH 7.4 are due to the sample having a pH\.br\significantly different from pH 7.4  Specimen pH\.br\may be artificially decreased due to delayed\.br\processing and may be increased when the specimen\.br\is exposed to air. Due to these factors, ionized\.br\calcium corrected to pH 7.4 should be interpreted\.br\with caution and used when the clinician has\.br\knowledge of the patients' acid/base status.
+ORC|RE||2017-POL230066
+OBR|7|2017-POL230066-0_TR10397-8H|2017-POL230066-0_TR10397-8H|TR10397-8H^Sodium|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|2951-2^Sodium||142|mmol/L|135-145||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|8|2017-POL230066-0_TR10359-8Y|2017-POL230066-0_TR10359-8Y|TR10359-8Y^Potassium|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|2823-3^Potassium||4.5|mmol/L|3.5-5.2||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|9|2017-POL230066-0_TR10149-3H|2017-POL230066-0_TR10149-3H|TR10149-3H^Creatinine/GFR|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|14682-9^Creatinine||126|umol/L|50-100|H|||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|NM|33914-3^Glomerular Filtration Rate (eGFR)||50|||A|||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||An eGFR result of 45-59 ml/min/1.73 m2 is\.br\consistent with mild to moderately decreased\.br\kidney function.\.br\ \.br\For patients of African descent, the reported\.br\eGFR must be multiplied by 1.15.\.br\ \.br\Effective May 4 2015, eGFR is calculated using\.br\the CKD-EPI 2009 equation.\.br\ \.br\KDIGO 2012 guidelines highlight the importance of\.br\eGFR and urine albumin creatinine ratio (ACR) in\.br\screening, diagnosis and management of CKD.\.br\Results for eGFR should be interpreted in concert\.br\with ACR.
+ORC|RE||2017-POL230066
+OBR|10|2017-POL230066-0_TR10065-1V|2017-POL230066-0_TR10065-1V|TR10065-1V^Bilirubin Total|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|14631-6^Bilirubin Total||5|umol/L|<20||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|11|2017-POL230066-0_TR10016-4V|2017-POL230066-0_TR10016-4V|TR10016-4V^Alkaline Phosphatase|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|6768-6^Alkaline Phosphatase||85|U/L|35-120||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|12|2017-POL230066-0_TR10009-9V|2017-POL230066-0_TR10009-9V|TR10009-9V^Alanine Aminotransferase|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|1742-6^Alanine Aminotransferase||15|U/L|<36||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|13|2017-POL230066-0_TR10051-1V|2017-POL230066-0_TR10051-1V|TR10051-1V^Aspartate Aminotransferase|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|1920-8^Aspartate Aminotransferase||16|U/L|<30||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|14|2017-POL230066-0_TR10038-8H|2017-POL230066-0_TR10038-8H|TR10038-8H^Amylase|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM4|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|1798-8^Amylase||99|U/L|30-110||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|15|2017-POL230066-0_TR11629-3V|2017-POL230066-0_TR11629-3V|TR11629-3V^Lipid Assessment|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718152904||CHEM6|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|55420-4^Hours After Meal||14|Hours|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|NM|14927-8^Triglyceride||0.70|mmol/L|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|NM|14647-2^Cholesterol||4.97|mmol/L|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|NM|14646-4^HDL Cholesterol||1.75|mmol/L|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|NM|70204-3^Non HDL Cholesterol||3.22|mmol/L|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Non HDL-Cholesterol is not affected by the\.br\fasting status of the patient.
+OBX|6|NM|39469-2^LDL Cholesterol||2.90|mmol/L|||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Consider the non HDL-C value as an alternate\.br\lipid target if monitoring treatment in\.br\intermediate or high risk patients.
+OBX|7|NM|32309-7^Cholesterol/HDL Cholesterol||2.8||||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|8|FT|LIPID^Lipid Target Values||Lipid Target Values should be based on patient\.br\10 year CVD risk assessment.\.br\\.br\! High or Intermediate CVD risk\.br\-----------!-----------------------------------\.br\Primary    ! LDL-C < or = 2.0 mmol/L  OR\.br\Tx target  ! > or = 50% decrease in LDL-C\.br\!\.br\Alternate  ! Non HDL-C < or = 2.6 mmol/L OR\.br\Tx target  ! ApoB < or =  0.8 g/L\.br\-----------!-----------------------------------\.br\! Low CVD risk\.br\-----------!-----------------------------------\.br\Primary    !> or = 50% decrease in LDL-C\.br\Tx target  !\.br\-----------------------------------------------||||||F|||20170718152904-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|16|2017-POL230066-0_TR12460-2V|2017-POL230066-0_TR12460-2V|TR12460-2V^Gestational Tolerance 2h|||20170717081000|||||||20170717082100|PLAS&PLASMA&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717104456||CHEM8|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|11884-4^Gestational Age in Weeks||28||||||F|||20170717104456-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|NM|14771-0^Glucose Fasting||4.1|mmol/L|||||F|||20170717104456-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|NM|14756-1^Glucose 1h||7.3|mmol/L|||||F|||20170717104456-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|NM|14759-5^Glucose 2h||6.4|mmol/L|||||F|||20170717104456-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||CDA 2013 Guidelines for normal glucose (mmol/L)\.br\post 75g glucose dose:\.br\-------------------------------------------------\.br\Approach:             Fasting:  1hour:   2hour:\.br\-------------------------------------------------\.br\Two-step              <5.3      <10.6    <9.0\.br\(confirmation)\.br\-------------------------------------------------\.br\One-step              <5.1      <10.0    <8.5\.br\(screen)\.br\-------------------------------------------------\.br\Abnormal flagging of results reflects the\.br\two-step approach.  Diagnosis of gestational\.br\diabetes mellitus is indicated if one or more\.br\results exceed the above criteria.
+OBX|5|FT|OBSERV^Observation||Patient reported "NO" symptoms of diarrhea,\.br\abdominal cramping, vomiting , nausea or\.br\dizziness.||||||F|||20170717104456-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|17|2017-POL230066-0_TR11494-2V|2017-POL230066-0_TR11494-2V|TR11494-2V^Prolactin/Macroprolactin|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717104536||CHEM12|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|2842-3^Prolactin||23|ug/L|5.0-27.0||||F|||20170717104536-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Prolactin not sufficiently elevated to enable\.br\Macroprolactin determination.
+ORC|RE||2017-POL230066
+OBR|18|2017-POL230066-0_TR10413-3|2017-POL230066-0_TR10413-3|TR10413-3^Testosterone Free|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718154844||CHEM15|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|FT|14914-6^Testosterone Free||Unable to calculate Free Testosterone as Total\.br\Testosterone is <0.1 nmol/L, the lower limit of\.br\quantitation.||||||F|||20170718154844-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|19|2017-POL230066-0_TR10322-6|2017-POL230066-0_TR10322-6|TR10322-6^Occult Blood (Fecal)|||20170717103900|||||||20170717104000|STL&STOOL = FECAL&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717110226||CHEM25|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|ST|14563-1^Occult Blood 1st Specimen||NEGATIVE||||||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|ST|41394-8^Occult Blood Collection Date 1st Specimen||15-JUL-2017||||||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|ST|14564-9^Occult Blood 2nd Specimen||NEGATIVE||||||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|ST|FCD2^Occult Blood Collection Date 2nd Specimen||15-JUL-2017||||||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|ST|14565-6^Occult Blood 3rd Specimen||POSITIVE|||A|||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Timely follow up with colonoscopy is strongly\.br\recommended to rule out colorectal cancer.
+OBX|6|ST|FCD3^Occult Blood Collection Date 3rd Specimen||16-JUL-2017||||||F|||20170717110226-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|20|2017-POL230066-3_TR10703-7|2017-POL230066-3_TR10703-7|TR10703-7^Group B Streptococcus|||20170717103700|||||||20170717103800|SER&SERUM&HL70070^^^^&VAG/RECTAL SWAB|LL313131^TESTING^KMCWILLIAM||||||20170719081835||MICRO3|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|ST|31208-2^Specimen Source||VAG/RECTAL SWAB||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|ST|33882-2^Collection Date||17-JUL-2017||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|ST|49049-0^Collection Time||08:21||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|ST|CUL STAT^Culture Status||Final||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|FT|634-6^Culture Report||Screen for Group B Streptococcus||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|6|CE|6463-4^Organism|1|*** Group B Streptococcus ***||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||This sample was submitted without a source\.br\specified causing a delay in reporting. Please\.br\provide the source for timely reporting.
+OBX|7|ST|18964-7^Penicillin|1|S||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|8|ST|18908-4^Clindamycin|1|S||||||F|||20170719081835-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|21|2017-POL230066-2_TR11989-1|2017-POL230066-2_TR11989-1|TR11989-1^Vaginal Screen|||20170717103600|||||||20170717103700|GENV&GENITAL VAGINAL&HL70070^^^^&VAGINA|LL313131^TESTING^KMCWILLIAM||||||20170719081435||MICRO3|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|ST|31208-2^Specimen Source||VAGINA||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|2|ST|33882-2^Collection Date||17-JUL-2017||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|3|ST|49049-0^Collection Time||08:21||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|FT|664-3^Microscopic||No evidence of yeast, Trichomonas vaginalis or\.br\bacterial vaginosis seen.\.br\\.br\Examination of vaginal specimens >1 hour after\.br\collection may result in decreased detection of\.br\Trichomonas vaginalis.||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|ST|CUL STAT^Culture Status||Final||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|6|FT|634-6^Culture Report||Culture\.br\No Neisseria gonorrhoeae isolated (48 hours).\.br\If prolonged incubation yields N. gonorrhoeae,\.br\a further report will follow.\.br\\.br\For isolation of N. gonorrhoeae, an endocervical\.br\swab is the specimen of choice.\.br\\.br\Note that the NAAT test (nucleic acid\.br\amplification test) for urogenital specimens\.br\is more sensitive than culture for detecting\.br\infection with Neisseria gonorrhoeae.\.br\Ref: Canadian Guidelines on Sexually Transmitted\.br\Infections.\.br\www.phac-aspc.gc.ca/std-mts/sti-its/index-eng.php||||||F|||20170719081435-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|22|2017-POL230066-1_XYZ|2017-POL230066-1_XYZ|XYZ^Unknown Test|||20170717143100|||||||20170717143200|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717143327||UNKNOWN|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+NTE|||Test Name = ANTIBODY IDENTIFICATION\.br\TEST ITEM = ANTIBODY ID\.br\ Anti-D  \.br\To test the free text screen\.br\Test Name = ANTIBODY TITRE\.br\TEST ITEM = ANTIBODY TITRED\.br\ TITRED  \.br\This antibody has a titre of 8
+ORC|RE||2017-POL230066
+OBR|23|2017-POL230066-0_TR10031-3|2017-POL230066-0_TR10031-3|TR10031-3^Amiodarone|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170719152631||REFER1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|AMIOD^Amiodarone||1.5|mg/L|1.0-2.0||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Tech Comment: This is a tech comment.
+OBX|2|NM|DESETHYL^Desethylamiodarone||1.0|mg/L|1.0-2.0||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||\.br\This test was referred to University Health\.br\Network, Laboratory Medicine Program (TGH),\.br\200 St. Elizabeth St. Toronto, ON M5G 2C4\.br\For inquiries please call 416-340-5227\.br\ \.br\This test was referred to University Health\.br\Network, Laboratory Medicine Program (TGH),\.br\200 St. Elizabeth St. Toronto, ON M5G 2C4\.br\For inquiries please call 416-340-5227
+OBX|3|NM|29742-4^Date Last Dose||20170716||||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|4|ST|29637-6^Time Last Dose||18:30||||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|5|ST|33882-2^Collection Date||17-JUL-2017||||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|6|ST|49049-0^Collection Time||08:15||||||F|||20170718125333-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+OBX|7|NM|4119-4^Amiodarone Dose||5.0|mg|||||F|||20170719152631-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+ORC|RE||2017-POL230066
+OBR|24|2017-POL230066-0_TR10141-0U|2017-POL230066-0_TR10141-0U|TR10141-0U^Copper Urine|||20170717081000|||||||20170717082100|UR&URINE&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717110036||REFER1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|COPPER-R^Copper (Urine)||58|mcg/L|||||F|||20170717110036-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+NTE|||Normal:  2 - 80 mcg/L.\.br\ \.br\Analysis by Inductively Coupled Plasma/Mass\.br\Spectrometry (ICP/MS)\.br\ \.br\This test was referred to NMS Labs,\.br\3701 Welsh Rd., PO Box 433A, Willow Grove, PA,\.br\U.S.A. 19090
+ORC|RE||2017-POL230066
+OBR|25|2017-POL230066-0_TR10329-1K|2017-POL230066-0_TR10329-1K|TR10329-1K^Osmolality|||20170717081000|||||||20170717082100|SER&SERUM&HL70070|LL313131^TESTING^KMCWILLIAM||TUQ23816|2017-POL230066|||20170719101339||REFER1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|OSMO S^Osmolality||295|mmol/kg|280-300||||F|||20170719101339-0400|9941^HAMILTON REFERENCE&247 Barton St., East&&Hamilton&Ontario&&Canada&B
+NTE|||This test was referred to Hamilton Health\.br\Sciences Main Lab (Hamilton General)\.br\237 Barton St E, Hamilton ON  L8L 2X2
+ORC|RE||2017-POL230066
+OBR|26|2017-POL230066-0_TR5490|2017-POL230066-0_TR5490|TR5490^SMARTVascular Dx|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170717105936||REFER1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|FT|PULS^SMARTVascular Dx||Reported under separate cover.\.br\\.br\Testing is referred to GD Biosciences\.br\13885 Alton Parkway, Suite B, Irvine,\.br\CA 92618, USA||||||F|||20170717105936-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+]]>
+</Message>
+<Message MsgID='5'>
+        <![CDATA[MSH|^~\&|PATHL7|EXC-RV^LIFELABS ONTARIO|HTTPCLIENT||20231225101821-0500||ORU^R01|ON220231225101821633|D|2.3.1|||AL
+PID|||5555555556^^^^JHN^^^^ON&Ontario&HL70347||REDROSE^MARY^^^^^L||19871230|F|||||(416) 675-4530^H
+PV1|1|OU
+ORC|RE||2017-POL230066
+OBR|1|2017-POL230066-0_TR10512-2|2017-POL230066-0_TR10512-2|TR10512-2^Reticulocyte Count|||20170717081000|||||||20170717082100|BLD&WHOLE BLOOD&HL70070|LL313131^TESTING^KMCWILLIAM||||||20170718140304||HAEM1|F|||LL2500025^ON_EMR_DOCTOR_Y^TEST~LL313131^TESTING^KMCWILLIAM
+OBX|1|NM|14196-0^Reticulocytes||25|x E9/L|20 - 100||||F|||20170718140304-0400|5687^LifeLabs&100 International Blvd.&&Toronto&Ontario&M9W 6J6&Canada&B
+]]>
+</Message>
+</HL7Messages>

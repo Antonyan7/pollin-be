@@ -1,0 +1,44 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+	  match /uploads/portal/test-results/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.testResult == 1;
+    }
+    
+    match /uploads/portal/referrals/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.referral == 1;
+    }
+    
+    match /uploads/portal/semen-collection/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.semenCollection == 1;
+    }
+
+    match /uploads/portal/document/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.document == 1;
+    }
+
+    match /uploads/portal/encounter-notes/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.encounterNote == 1;
+    }
+
+    match /uploads/portal/staff-notes/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.staffNote == 1;
+    }
+
+    match /uploads/portal/plans/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.plans == 1;
+    }
+
+    match /uploads/portal/ivf-lab/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.ivfLab == 1;
+    }
+
+     match /uploads/portal/consents/{allPaths=**} {
+    	allow read, write: if request.auth.token.storage.consents == 1;
+    }
+  }
+}

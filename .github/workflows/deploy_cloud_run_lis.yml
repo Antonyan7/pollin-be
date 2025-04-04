@@ -1,0 +1,83 @@
+name: "Deploy CloudRun Service: lis"
+run-name: "Deploy CloudRun Service: lis to ${{ inputs.environment || 'dev' }}"
+
+env:
+  service_name: lis
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - preprod
+  push:
+    paths:
+      - 'package.json'
+      - 'libs/**'
+      - 'apps/lis/**'
+      - '.github/workflows/deploy_cloud_run_lis.yml'
+    branches:
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    environment: ${{ inputs.environment || 'dev' }}
+    steps:
+      - name: Checkout BE Repo
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-backend
+          ref: ${{ github.ref }}
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+
+      - name: Checkout Actions repo
+        if: success()
+        uses: actions/checkout@v4
+        with:
+          repository: OPN-Technologies/Nestproject-ci-actions
+          token: ${{ secrets.RELEASE_MANAGMENT_PAT }}
+          path: custom-actions
+
+      - name: Get current week of the year
+        id: get-week
+        run: echo "WEEK=$(date +'%Y-%V')" >> $GITHUB_ENV
+
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        with:
+          # Cache key includes all paths and the current week to refresh cache weekly
+          path: |
+            ./node_modules
+          key: cache-${{ runner.os }}-${{ env.WEEK }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            cache-${{ runner.os }}-
+  
+      - name: Create Release Version
+        id: create_release_version
+        if: success()
+        uses: ./custom-actions/.github/actions/create-release-version
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.Nestproject_PLATFORM_FIRESTORE}}
+          APPLICATION: "backend"
+          SERVICE_NAME: ${{ env.service_name }}
+          ENVIRONMENT: ${{ inputs.environment || 'dev' }}
+
+      - name: Build & Deploy
+        if: success()
+        uses: ./custom-actions/.github/actions/deploy-cloud-run-backend-services
+        with:
+          service_name: ${{ env.service_name }}
+          version_number: ${{steps.create_release_version.outputs.version}}
+          build_number: ${{steps.create_release_version.outputs.buildNumber}}
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.BE_GCP_SERVICE_ACCOUNT}}
+          PROJECT_ID: ${{ vars.BE_PROJECT_ID}}

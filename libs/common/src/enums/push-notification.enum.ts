@@ -1,0 +1,16 @@
+export enum PushNotificationType {
+  Questionnaire = 'Questionnaire',
+  MedicationDetails = 'MedicationDetails',
+  Medications = 'Medications',
+  MilestoneAlert = 'MilestoneAlert',
+  PartnerInvitation = 'PartnerInvitation',
+  PlansSelection = 'PlansSelection',
+  Milestone = 'Milestone',
+  TestResults = 'TestResults',
+  Chat = 'Chat',
+  ReportDetails = 'ReportDetails',
+  SubmitPatientFeedback = 'SubmitPatientFeedback',
+  Library = 'Library',
+  CompleteConsent = 'CompleteConsent',
+  ViewConsents = 'ViewConsents',
+}

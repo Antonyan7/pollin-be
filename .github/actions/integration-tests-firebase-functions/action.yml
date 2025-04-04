@@ -1,0 +1,112 @@
+name: 'Deploy Firebase Functions'
+description: 'Deploy Firebase Functions'
+inputs:
+  node_version:
+    description: 'Node version'
+    required: false
+    default: v20.11.1
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Integration and Unit testing
+      env:
+        HUSKY: 0
+      run: |
+        echo "::group::Validate Env"
+        echo "whoami"
+        whoami
+        echo "==> Docker Version"
+        docker --version
+        echo "==> gcloud Version"
+        gcloud --version
+        echo "::endgroup::"
+        echo "::group::Auth with GCLOUD For Secrets"
+        PROJECT_ID=Nestproject-backend-dev
+        cd ./firebase-platform
+        cat >> service-account.json << EOF
+        ${{ env['dev_service_account'] }}
+        EOF
+        echo "Using projectId: $PROJECT_ID"
+        gcloud auth activate-service-account --key-file=./service-account.json --project=$PROJECT_ID
+        export GOOGLE_APPLICATION_CREDENTIALS=./service-account.json
+        cd ..
+        echo "::endgroup::"
+
+        echo "::group::Add Environment Variables"
+        cd ./firebase-platform
+        echo "Writing Environment Variables for firebase platform to: ./firebase-platform/.env"
+        gcloud secrets versions access latest --secret=INTEGRATION_TESTS_CF_V3 > ./.env
+        cd ..
+        echo "Add dummy .env file on root"
+        touch .env
+        echo "Add dummy .env file on ./data-seeds/"
+        touch ./data-seeds/.env
+        echo "::endgroup::"
+
+        echo "::group::Install and Activate NodeJS"
+        # Increase RAM for Node.js process
+        export NODE_OPTIONS="--max-old-space-size=4096" # Increase to 4 GB
+        source ~/.nvm/nvm.sh
+        nvm install ${{ inputs.node_version }}
+        nvm use ${{ inputs.node_version }}
+        PATH="$HOME/.yarn/bin:$PATH"
+        yarn config set prefix ~/.yarn -g
+        echo "::endgroup::"
+
+        echo "::group::Install modules For Services"
+        yarn install
+        echo "::endgroup::"
+
+        echo "::group::Install modules For Migrations"
+        yarn --cwd ./migrations install
+        echo "::endgroup::"
+
+        echo "::group::Install modules For firebase functions"
+        yarn --cwd ./firebase-platform install
+        echo "::endgroup::"
+
+        echo "::group::Run lint For firebase functions"
+        yarn --cwd ./firebase-platform run lint
+        echo "::endgroup::"
+
+        echo "::group::Purging all Images, Containers, Volumes, and Networks"
+        if [ "$(docker ps -a -q)" ]; then
+            docker stop $(docker ps -a -q)
+            docker rm $(docker ps -a -q)
+        fi
+        sudo docker compose -f ./data-seeds/docker-compose.yaml down
+        sudo docker compose -f ./data-seeds/docker-compose-integration-tests.yaml down
+        sudo docker system prune --all --force --volumes
+        echo "::endgroup::"
+
+        echo "::group::Run Integration Test Docker"
+        sudo docker compose -f ./data-seeds/docker-compose-integration-tests.yaml up --detach --force-recreate
+        sleep 60s
+        echo "::endgroup::"
+
+        echo "::group::Remove and create SQL database"
+        cd ./migrations
+        cp ../firebase-platform/.env ./.env
+        yarn run migrate
+        cd ../
+        echo "::endgroup::"
+
+        echo "::group::Setup Firestore Emulator"
+        cd ./firebase-platform
+        echo "Starting Firestore Emulator..."
+        nohup firebase emulators:start --only firestore --project Nestproject-backend-dev &>/dev/null &
+        export FIRESTORE_EMULATOR_HOST=localhost:9098
+        yarn run test:coverage
+        cd ..
+        echo "::endgroup::"
+        echo "::group::Purging all Images, Containers, Volumes, and Networks"
+        if [ "$(docker ps -a -q)" ]; then
+            docker stop $(docker ps -a -q)
+            docker rm $(docker ps -a -q)
+        fi
+        sudo docker compose -f ./data-seeds/docker-compose.yaml down
+        sudo docker compose -f ./data-seeds/docker-compose-integration-tests.yaml down
+        sudo docker system prune --all --force --volumes
+        echo "::endgroup::"
+      shell: bash

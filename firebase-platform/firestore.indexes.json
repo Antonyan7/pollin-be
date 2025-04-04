@@ -1,0 +1,1253 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "otp-codes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "authUserId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "code",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "jwt-token",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "token",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "password-reset-token",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "token",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "questionnaire-intents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "questionnaireId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "serviceCategoryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "questionnaire-intents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "serviceCategoryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "questionnaire-intents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "questionnaireId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "questionnaire-intents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "questionnaireId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "questionnaire-intents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientQuestionnaireId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "booking-intent",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "authUserId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "serviceCategoryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "booking-intent",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "authUserId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partner-invitations",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "inviterId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partner-invitations",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "inviterId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "partnerEmail",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-medication-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isAcknowledged",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientMedicationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-medication-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientMedicationId",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cloud-task",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cloud-task",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-intake-snapshot",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-sheet-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sheetDayDate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientPlanSheetId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-sheet-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sheetDayDate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientPlanSheetId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-sheet-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sheetDayDate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientPlanSheetId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-sheet-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sheetDayDate",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientPlanSheetId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ivf-task-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sourceTaskSummaryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ivf-task-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sourceTaskSummaryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ivf-task-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sourceTaskSummaryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ivf-task-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "sourceTaskSummaryId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-medication-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isAcknowledged",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientMedicationId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-responsible-physician-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-responsible-physician-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-responsible-physician-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-responsible-physician-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "test-result-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "testResultId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-plan-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appointment-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "appointmentId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appointment-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "appointmentId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appointment-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "appointmentId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "appointment-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "appointmentId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cloud-task",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "appointmentId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "test-order-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "testOrderId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "test-order-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "testOrderId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "test-order-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "testOrderId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "test-order-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "testOrderId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "task",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dishLabel",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "identityMatch",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scannedBy",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientFullName",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "task",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dishLabel",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "identityMatch",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scannedBy",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientFullName",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "task",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dishLabel",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "identityMatch",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scannedBy",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientFullName",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "task",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dishLabel",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "identityMatch",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scannedBy",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "patientFullName",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "day",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "day",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "day",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "dish-scanning-log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientPlanCohortGroupId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "day",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-consent-package-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientConsentPackageId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-consent-package-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientConsentPackageId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-consent-package-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientConsentPackageId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "patient-consent-package-history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "patientConsentPackageId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "authUserFullName",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

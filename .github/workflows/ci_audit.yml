@@ -1,0 +1,36 @@
+name: Audit CI
+on:
+  pull_request:
+    paths:
+      - '**package.json'
+      - '**yarn.lock'
+    branches:
+      - 'develop'
+  workflow_dispatch:
+  schedule:
+    # Once a day at 05:00
+    - cron: '0 5 * * *'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    timeout-minutes: 15
+    runs-on: be-ci-pool
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+
+          scope: '@OWNER'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PAT_FOR_GITHUB }}
+
+      - uses: ./.github/actions/audit
+        name: Static code analysis and build
