@@ -118,7 +118,7 @@
   "devDependencies": {
     "@nestjs/cli": "^10.4.9",
     "@nestjs/schematics": "^10.1.4",
-    "@nestjs/testing": "^10.4.15",
+    "@nestjs/testing": "^11.0.13",
     "@swc/core": "^1.11.9",
     "@swc/jest": "^0.2.37",
     "@types/bunyan": "^1.8.11",
